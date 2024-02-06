@@ -220,6 +220,9 @@ hr{
     font-weight: lighter;
     text-transform: capitalize;
 }
+.musics .cards .cards-nav li:hover h5{
+    color: #fff;
+}
 .musics .cards .cards-nav li b{
     color: #fff;
     font-weight: bold;
@@ -396,14 +399,14 @@ hr{
 .benfits .benfits-support ul{
     list-style: none;
     width: 100%;
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
     align-items: center;
     flex-wrap: wrap;
+    gap: 10px;
 }
 .benfits .benfits-support ul li{
     width: 200px;
-    margin: 10px 0;
 }
 .benfits .benfits-support ul li img{
     width: 80%;
@@ -562,19 +565,28 @@ hr{
 .foot .link ul li i{
     scale: 1.3;
 }
+@media (max-width:1316px){
+    .benfits .benfits-support ul{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-items: center;
+        gap: 10px;
+    }
+
+}
 @media (max-width:963px){
     .landing-content .text{
         align-items: center;
         flex-direction: column;
         width: 100%;
+        text-align: center;
     }
     .landing-content .text .content-title{
-        text-align: center;
+        
         width: 100%;
     }
 
     .landing-content .text .content-text{
-        text-align: center;
         width: 100%;
     }
     .landing-content .text .content-text p{
@@ -601,7 +613,6 @@ hr{
         margin-top: 10px;
         justify-content: center;
     }
-
     .foot .link ul li a{
         margin: 10px;
     }
@@ -612,25 +623,71 @@ hr{
         height: 75px;
         margin: 0 0px 20px 0;
     }
+    .benfits .benfits-support ul li{
+        width: 150px;
+    }
 }
 @media (max-width:625px){
-    .head {
-        flex-direction: column;
-        padding: 20px 0 0px 0;
+    .head .nav-toggle{
+        width: 35px;
+        height: 35px;
+        position: relative;
     }
-    .head .logo img{
-        width: 65px;
+    .head .toggle{
+        width: 100%;
+        height: 100%;
+        direction: rtl;
+    }
+    .head .toggle .list{
+        width: 100%;
+        height: 3px;
+        background-color: #fff;
         margin-bottom: 10px ;
+        border-radius: 50px;
+    }
+    .head .toggle .list:nth-child(2){
+        width: 75%;
+        transition: width 0.3s;
+    }
+    .head .nav{
+        position: absolute;
+        display: none;
+        flex-direction: column;
+        width: 200px;
+        height: 300px;
+        background-color: #3a6cf45f;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        left: -150px;
+        border-radius: 10px ;
+        justify-content: center;
+        align-items: center;
+    }
+    .head .nav a{
+        margin: 15px 0;
+        padding: 10px 25px;
+    }
+    .head .nav a.active{
+        margin: 15px 0;
+        padding: 10px 30px;
+    }
+    .head .nav-toggle:hover .nav{
+        display: flex;
+    }
+    .head .nav-toggle:hover .toggle .list:nth-child(2){
+        width: 100%;
     }
     .landing-image{
         height: 300px;
     }
-
     .musics .cards .cards-nav li{
         margin: 0 0px 5px 0 ;
     }
     .benfits .benfits-image{
         height: 300px;
+    }
+    .benfits .benfits-support ul{
+        grid-template-columns: 1fr 1fr;
     }
     .top-members .persons .persons-cards li{
         width: 100%;
@@ -640,7 +697,9 @@ hr{
     .more .more-cards a{
         height: 300px;
     }
-
+    .foot{
+        flex-direction: column-reverse;
+    }
     .foot .info, .foot .copyright {
         width: 100%;
         text-align: center;
@@ -660,13 +719,6 @@ hr{
     .container{
         padding: 0 20px;
     }
-    .head .nav{
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .head .nav a{
-        margin-bottom: 10px;
-    }
     .landing-content .text{
         padding-top: 25px;
     }
@@ -675,22 +727,29 @@ hr{
     .landing .landing-content .content-title{
         font-size: 28px;
     }
-    .sec-title{
-        justify-content: center;
-        flex-direction: column;
-        text-align: center;
+    .sec-title h1{
+        font-size: 26px;
+    }
+    .sec-title a{
+        font-size: 14px;
     }
     .landing-content .text
     {
         padding-bottom: 10px;
     }
-    .landing-content .text .content-text .sel-buy a
-    {
-        margin-bottom: 10px;
-    }
     .landing-content .text .content-text .sel-buy
     {
         flex-wrap: wrap;
+    }
+    .landing-content .text .content-text .sel-buy a
+    {
+        font-size: 14px;
+        padding: 10px 15px;
+        margin-bottom: 10px;
+    }
+    .musics .cards .cards-nav li{
+        width: 300px;
+        height: 285px;
     }
     .benfits .benfits-support ul li{
         text-align: center;
